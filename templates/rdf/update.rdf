@@ -1,0 +1,13 @@
+{% for k,v in namespaces.items %}PREFIX {{k}}: <{{v}}>
+{% endfor %}
+
+DELETE {
+{% for k,v in values.items %}{% if v.rdf_original_value %} <> {{k}} {{v.rdf_original_value|safe}} .
+{% endif %}{% endfor %}
+}
+INSERT {
+{% for k,v in values.items %}{% if v.rdf_value %} <> {{k}} {{v.rdf_value|safe}} .
+{% endif %}{% endfor %}
+}
+WHERE {
+}

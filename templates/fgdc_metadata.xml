@@ -1,0 +1,129 @@
+<metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin>GIS Lab, Earth Systems Research Center</origin>
+                <origin>UNH Library</origin>
+                <pubdate>2017</pubdate>
+                <title>{{title}}</title> <!-- Title of Record e.g. Moose Bog, 1927 -->
+                <pubinfo>
+                    <pubplace>Durham, NH</pubplace>
+                    <publish>UNH</publish>
+                </pubinfo>
+                <onlink>{{onlink}}</onlink> <!-- Link to Fedora -->
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>{{abstract}}</abstract> <!-- Abstract, per collection -->
+            <purpose>{{purpose}}</purpose> <!-- Purpose of use, per collection -->
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>{{caldate}}</caldate> <!-- Date map, etc. was originally created; easiest to use year only e.g. 2017 -->
+                </sngdate>
+            </timeinfo>
+            <current>{{current}}</current> <!-- "Ground Condition for photos or "Publication Date" for maps -->
+        </timeperd>
+        <status>
+             <progress>Complete</progress>
+             <update>None Planned</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>{{westbc}}</westbc> <!-- Minimum Longitude --> 
+                <eastbc>{{eastbc}}</eastbc> <!-- Maximum Longitude -->
+                <southbc>{{southbc}}</southbc> <!-- Minimum Latitude -->
+                <northbc>{{northbc}}</northbc> <!-- Maximum Latitude -->
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>{{themekey}}</themekey> <!-- Theme Keywords, may be repeated -->
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>{{placekey}}</placekey> <!-- Place keywords, may be repeated -->
+            </place>
+        </keywords>
+        <accconst>{{accconst}}</accconst> <!-- Acknowlegement requirement, probably same for all -->
+        <useconst>{{useconst}}</useconst> <!-- Use restrictions e.g. "Not for legal use", probably by collection or same for all -->
+        <ptcont> <!-- optional -->
+            <!-- contact info -->
+        </ptcont>
+        <datacred>UNH</datacred>
+        <native>{{native}}</native> <!-- File format; "TIFF" for all images, "PDF" for guidebooks -->
+    </idinfo>
+    <dataqual> <!-- optional Data Quality section -->
+        <attrac>{{attrac}}</attrac> <!-- Scan color accuracy, per collection -->
+        <logic>None</logic>
+        <complete>
+            {{complete}} <!-- Rules used to derive dataset -->
+        </complete>
+        <posacc> <!-- information about the accuracy of bounds, optional -->
+            <horizpa>
+                <horizpar>{{horizpar}}</horizpar> <!-- Explanation of horizontal, longitudinal, accuracy -->
+            </horizpa>
+            <vertacc>
+                <vertaccr>{{vertaccr}}</vertaccr> <!-- Explanation of vertical, latitudinal, accuracy -->
+            </vertacc>
+        </posacc>
+        <lineage>
+            <procstep>
+                <procdesc>{{procdesc}}</procdesc> <!-- Scanner used, software and settings --> 
+                <procdate>{{procdate}}</procdate> <!-- Date scanning was done -->
+                <procont>
+                    <!-- contact info -->
+                </procont>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Raster</direct>
+        <rastinfo>
+            <rasttype>Pixel</rasttype>
+        </rastinfo>
+    </spdoinfo>
+    <spref>
+        <horizsys>
+            <planar>
+                <gridsys>
+                    <gridsysn>State Plane Coordinate System 1983</gridsysn>
+                    <spcs>
+                        <spcszone>New Hampshire</spcszone>
+                        <transmer>
+                            <sfctrmer>0.999967</sfctrmer>
+                            <longcm>-71.666667</longcm>
+                            <latprjo>42.500000</latprjo>
+                            <feast>984249.999900</feast>
+                            <fnorth>0.000000</fnorth>
+                        </transmer>
+                    </spcs>
+                </gridsys>
+                <planci>
+                    <plance>Row and column</plance>
+                    <coordrep>
+                        <absres>2.4</absres>
+                        <ordres>2.4</ordres>
+                    </coordrep>
+                    <plandu>feet</plandu>
+                </planci>
+            </planar>
+            <geodetic>
+                <horizdn>North American Datum of 1983</horizdn>
+                <ellips>GRS 80</ellips>
+                <semiaxis>20925604.4720406</semiaxis>
+                <denflat>298.26</denflat>
+            </geodetic>
+        </horizsys>
+    </spref>
+    <metainfo>
+        <metd>{{metd}}</metd> <!-- date metadata collected -->
+        <metc>
+            <!-- contact info -->
+        </metc>
+        <metstdn>FGDC CSDCM</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+    </metainfo>
+</metadata>

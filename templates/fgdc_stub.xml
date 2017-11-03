@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+    <citeinfo><onlink>{{Onlink}}</onlink></citeinfo>
+    <direct>{{DataType}}</direct>
+    <westbc>{{MinX}}</westbc>
+    <eastbc>{{MaxX}}</eastbc>
+    <southbc>{{MinY}}</southbc>
+    <northbc>{{MaxY}}</northbc>
+    <timeperd><caldate>{{ContentDate}}</caldate></timeperd>
+    <origin>{{Originator}}</origin>
+    <title>{{LayerDisplayName}}</title>
+    <publish>{{Publisher}}</publish>
+    <abstract>{{Abstract}}</abstract>
+</metadata>

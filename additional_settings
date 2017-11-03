@@ -1,0 +1,80 @@
+#append these settings to the main project settings file
+
+tomcat_base_url = ""
+TOMCAT_BASE_URL = tomcat_base_url
+
+#geoserver settings
+GEOSERVERS = {
+    'default': {
+        'USER': '',
+        'PASSWORD': '',
+        'DATA_PATH': '',
+        'URL': '',
+        'REST_URL': 'http://place.sr.unh.edu:8080/geoserver/rest',
+    }
+}
+GEOSERVER = GEOSERVERS['default']
+
+fcrepo_base_url = ""
+FCREPO_BASE_URL = fcrepo_base_url
+
+ONLINK_BASE = ""
+
+proxy_url = ""
+PROXY_URL = proxy_url
+
+#internal (writeable) solr repositories
+SOLR_REPOS = {
+    'default': {
+        'URL': ''
+    }
+}
+SOLR_REPO = SOLR_REPOS['default']
+
+#external solr repositories
+EXT_SOLR_REPOS = {
+    "Harvard": {
+        "url": "pelham.lib.harvard.edu:8080/opengeoportal",
+        "institutions": ("Harvard",)
+    },
+    "MIT": {
+        "url": "geodata.tufts.edu",
+        "institutions": ("MIT",)
+    },
+    "Polimi": {
+        "url": "geodata.polimi.it",
+        "institutions": ("Polimi",),
+        "datatypes": ("Raster",)
+    },
+    "Tufts": {
+        "url": "geodata.tufts.edu",
+        "institutions": ("Tufts",)
+    },
+    "UNH": {
+        "url": "place.sr.unh.edu",
+        "institutions": ("UNH",)
+    }
+}
+
+#append the following to the existing project setting with the same name
+INSTALLED_APPS = (
+    'geoserver',
+    'converter',
+    'ogp',
+    'fcrepo',
+    'nominatim',
+    'gazetteer',
+)
+
+DATABASES = {
+    'nominatim': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': ''
+    },
+}
+
+DATABASE_ROUTERS = ['nominatim.router.NominatimRouter']
+

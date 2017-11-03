@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+    <script src="http://place.sr.unh.edu/js/jquery-2.1.1.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <form action="/convert/{{type}}" method="post" id="map_file_uploader" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

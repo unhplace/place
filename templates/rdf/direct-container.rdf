@@ -1,0 +1,12 @@
+PREFIX ldp: <http://www.w3.org/ns/ldp#>
+PREFIX pcdm: <http://pcdm.org/models#>
+
+DELETE {
+}
+INSERT {
+    <> a ldp:DirectContainer, pcdm:Object .
+    <> ldp:membershipResource <{{membership_resource}}> .
+    <> ldp:hasMemberRelation pcdm:hasMember .
+}
+WHERE {
+}

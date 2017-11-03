@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>UNH PLACE</title>
+    <script type="text/javascript" src="/media/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/media/js/spin.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.spin.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <!--
+    <script type="text/javascript" src="/media/js/leaflet-0.7.3.js"></script>
+    -->
+    <script type="text/javascript" src="/media/js/array_additions.js"></script>
+    <script type="text/javascript" src="/media/js/object_additions.js"></script>
+    <script type="text/javascript" src="/media/js/leaflet_additions.js"></script>
+    <script type="text/javascript" src="/media/js/polygon.js"></script> <!-- not using ? -->
+
+    <!--
+    <link rel="stylesheet" href="/media/css/leaflet-0.7.3.css" />
+    -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="/media/css/ogp-c.css"/>
+    <link rel="mask-icon" href="/media/img/pin_icon.svg" color="black"/>
+
+    <script type="text/javascript" src="/media/js/map.js"></script>
+
+    <script type="text/javascript">
+        var ogpController = null;
+        
+        $(document).ready(function() {
+            ogpController = new OGPController("mapview", {
+                center: new L.LatLng(44.125, -71.625),
+                scrollWheelZoom: false,
+                zoom: 11
+            }, "/ogp", "UNH");
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div id="place-banner">
+        <img id="place-logo" alt="UNH PLACE Logo" title="UNH PLACE" src="/media/img/place_logo_narrow.png">
+        <a class="text-control dialog-button" id="help-button">Show Help</a>
+        <a class="text-control dialog-button" id="about-button">About</a>
+        <a class="text-control dialog-button" id="contact-button">Contact Info</a>
+    </div>
+    <div id="searchview">
+        <div class="searchview-row">
+            <label><span class="label-text">Location: </span>
+                <input id="search-field-location" type="text" placeholder="Enter a location (Currently: ...)">
+            </label>
+            <label><input id="search-field-showpolygon" type="checkbox">Show and Limit to Location Outline</label>
+            <a class="text-control" id="search-button-gazetteer">Use Gazetteer</a>
+        </div>
+        <div class="searchview-row">
+            <label><span class="label-text">Keyword or Title: </span> <input id="search-field-keyword"></label>
+            <span>
+                <label>
+                    <span class="label-text">Years: </span>
+                    <input id="search-field-startyear" maxlength=4>
+                </label>
+                <label>
+                    <span class="label-text">to</span>
+                    <input id="search-field-endyear" maxlength=4>
+                </label>
+            </span>
+            <span>
+                <label>
+                    <span class="label-text">Originator: </span>
+                    <input type="text" id="search-field-originator">
+                </label>
+            </span>
+            <span>
+                <label>
+                    <span class="label-text">Data Type: </span>
+                    <select id="search-field-datatype">
+                        <option value="">All</option>
+                        <option value="Raster,Paper+Map">Maps and Images</option>
+                        <option value="Book">Books</options>
+                        <optgroup label="Vector Types">
+                            <option>Line</option>
+                            <option>Point</option>
+                            <option>Polygon</option>
+                        </option>
+                    </select>
+                </label>
+            </span>
+            <span id="search-buttons">
+                <a class='text-control' id="search-button-reset">Reset</a>
+                <a class='text-control' id="search-button-submit">Search</a>
+            </span>
+        </div>
+    </div>
+    <div>
+        <div id="tableviews">
+            <div id="selected-items-tableview" class="tableview"></div>
+            <div id="category-change-tableview" class="tableview"></div>
+            <div id="internal-items-tableview" class="tableview"></div>
+        </div>
+        <div id="mapview"></div>
+        <!--
+        <div id="footer">
+            <img id="imls_logo" src="/media/img/imls_logo.png">
+        </div>
+        <div id="footer2">
+            <img id="imls_logo_narrow" src="/media/img/imls_logo_narrow.png">
+        </div>
+        <div id="footer3">
+            This project was made possible in part by the <a href="http://imls.gov">Institute of Museum and Library Services</a>.
+        </div>
+        -->
+    </div>
+    {% csrf_token %}
+{% endblock %}
